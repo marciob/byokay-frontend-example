@@ -1,22 +1,12 @@
 // app/components/ViewSwitcher.tsx
 "use client";
-import { useEffect, useState } from "react";
 import MobileMessage from "./MobileMessage";
 
 interface ViewSwitcherProps {
-  children: React.ReactNode; // ← accept children, not mainContent
+  children: React.ReactNode;
 }
 
 export default function ViewSwitcher({ children }: ViewSwitcherProps) {
-  const [w, setW] = useState(0);
-
-  useEffect(() => {
-    setW(innerWidth);
-    const handler = () => setW(innerWidth);
-    addEventListener("resize", handler);
-    return () => removeEventListener("resize", handler);
-  }, []);
-
   return (
     <>
       {/* mobile only */}
