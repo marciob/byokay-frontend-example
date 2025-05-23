@@ -48,7 +48,7 @@ export default function Chatbot() {
         ...prev,
         {
           id: getNextId(),
-          text: "🔑 To get started, please connect your AI key using the “Connect AI” button.",
+          text: "🔑 To get started, please connect your Openai key using the “Connect AI” button.",
           sender: "ai",
         },
       ]);
