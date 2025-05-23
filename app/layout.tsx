@@ -13,21 +13,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Chatbot",
   description: "Frontend Example for Byorkay",
+  // Next.js will turn this into <meta name="viewport" …> in <head>
+  viewport: { width: "device-width", initialScale: 1 },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
-      <body
-        suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {/* Show desktop UI ≥640 px, ‘mobile-warning’ below */}
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <body suppressHydrationWarning>
         <ViewSwitcher>{children}</ViewSwitcher>
       </body>
     </html>
